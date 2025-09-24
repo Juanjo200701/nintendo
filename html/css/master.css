@@ -1,0 +1,527 @@
+/* fonts */
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url(../fonts/Montserrat-Medium.ttf);
+}
+/* html */
+html {
+  font-size: 16px;
+  font-family: Montserrat-Regular;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* Login */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* main.login */
+main.login form .alert.alert-danger {
+  position: absolute;
+  top: 535px;
+  left: 18px;
+  width: 325px;
+  background: #fff0f0;
+  color: #8a4b4f;
+  border-radius: 30px;
+  font-family: Montserrat-Regular;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 12px 18px;
+  box-shadow: 0 2px 8px #8A4B4F22;
+  border: 1px solid #da1024;
+  opacity: 0.95;
+  z-index: 10;
+  text-align: center;
+}
+.error{
+  color: #fff;
+  /* bottom: 0%; */
+  top: 780px;
+  right: 33%;
+  font-size: 20px;
+  text-decoration: none;
+  position: absolute;
+  /* margin-top: 100px; */
+}
+.error:hover{
+  color: #792127;
+  text-decoration: underline;
+}
+main.login form .alert.alert-danger > div {
+  margin-bottom: 6px;
+}
+main.login form .alert.alert-danger > div:last-child {
+  margin-bottom: 0;
+}
+main.register form .alert.alert-danger {
+  position: absolute;
+  top: 448px;
+  left: 18px;
+  width: 325px;
+  background: #fff0f0;
+  color: #8a4b4f;
+  border-radius: 30px;
+  font-family: Montserrat-Regular;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 12px 18px;
+  box-shadow: 0 2px 8px #8A4B4F22;
+  border: 1px solid #da1024;
+  opacity: 0.95;
+  z-index: 10;
+  text-align: center;
+}
+main.register form .alert.alert-danger > div {
+  margin-bottom: 6px;
+}
+main.register form .alert.alert-danger > div:last-child {
+  margin-bottom: 0;
+}
+main.login {
+  background: url(../images/bg-login.svg) no-repeat center;
+  border-radius: 40px;
+  height: 850px;
+  margin: 20px auto;
+  position: relative;
+  width: 400px;
+}
+/* form */
+main.login form {
+  position: relative;
+}
+main.login form input,
+main.login form button {
+  border-radius: 40px;
+  border: none;
+  font-family: Montserrat-Regular;
+  font-weight: 400;
+  height: 50px;
+  position: absolute;
+  left: 18px;
+  width: 360px;
+}
+main.login form input {
+  background: #fff;
+  color: #8a4b4f;
+  font-size: 14px;
+  opacity: 0.5;
+  outline: none;
+  text-indent: 20px;
+  transition: opacity 0.2s ease-in;
+}
+main.login form input:focus {
+  opacity: 0.8;
+}
+main.login form input:first-of-type {
+  top: 590px;
+}
+/* main.login form input:nth-of-type(2) {
+  top: 590px;
+} */
+main.login form input:last-of-type {
+  top: 650px;
+}
+main.login form button {
+  color: #fff;
+  background: #8a4b4f;
+  font-size: 16px;
+  top: 717px;
+  transition: transform 0.2s ease-in;
+}
+main.login form button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+/* register */
+
+main.register {
+  background: url(../images/bg-login.svg) no-repeat center;
+  border-radius: 40px;
+  height: 785px;
+  margin: 20px auto;
+  position: relative;
+  width: 400px;
+}
+/* form */
+main.register form {
+  position: relative;
+}
+main.register form input,
+main.register form button {
+  border-radius: 40px;
+  border: none;
+  font-family: Montserrat-Regular;
+  font-weight: 400;
+  height: 50px;
+  position: absolute;
+  left: 18px;
+  width: 360px;
+}
+main.register form input {
+  background: #fff;
+  color: #8a4b4f;
+  font-size: 14px;
+  opacity: 0.5;
+  outline: none;
+  text-indent: 20px;
+  transition: opacity 0.2s ease-in;
+}
+
+main.register form input:focus {
+  opacity: 0.8;
+}
+main.register form input:first-of-type {
+  top: 500px;
+}
+main.register form input:nth-of-type(2) {
+  top: 560px;
+}
+main.register form input:last-of-type {
+  top: 620px;
+}
+
+main.register form button {
+  color: #fff;
+  background: #8a4b4f;
+  font-size: 16px;
+  top: 717px;
+  transition: transform 0.2s ease-in;
+}
+main.register form button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+main.register form a{
+  color: #fff;
+  opacity: 0.8;
+  position: absolute;
+  top: 688px;
+  left: 30%;
+}
+
+main.register form a:hover{
+  color: #792127;
+  opacity: 1;
+}
+
+main.register form a:visited{
+  text-decoration: none;
+}
+
+/* alerts */
+.alerta{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 550px;
+  color: #fff;
+  font-weight: 500;
+  /* left: 85px; */
+}
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* Dashboard */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* main.dashboard */
+main.dashboard,
+main.add,
+main.show,
+main.edit {
+  background: url(../images/bg.svg) no-repeat center;
+  border-radius: 40px;
+  height: 785px;
+  margin: 20px auto;
+  position: relative;
+  width: 400px;
+}
+/* header */
+main.dashboard header,
+main.add header,
+main.show header,
+main.edit header {
+  position: relative;
+}
+main.dashboard header h2,
+main.add header h2,
+main.show header h2,
+main.edit header h2 {
+  color: #fff;
+  font-family: Montserrat-Medium;
+  font-weight: 500;
+  font-size: 18px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 42px;
+  width: 232px;
+}
+main.dashboard header a.close:link,
+main.dashboard header a.close:visited,
+main.add header a.close:link,
+main.add header a.close:visited,
+main.show header a.close:link,
+main.show header a.close:visited,
+main.edit header a.close:link,
+main.edit header a.close:visited {
+  background: url(../images/btn-close.svg) no-repeat center;
+  height: 34px;
+  left: 353px;
+  position: absolute;
+  top: 52px;
+  transition: transform 0.2s ease-in;
+  width: 34px;
+}
+main.dashboard header a.close:hover,
+main.add header a.close:hover,
+main.show header a.close:hover,
+main.edit header a.close:hover {
+  transform: scale(1.1);
+}
+/* a.add */
+main.dashboard a.add:link,
+main.dashboard a.add:visited {
+  background: url(../images/btn-add.svg) no-repeat center;
+  height: 50px;
+  left: 27px;
+  position: absolute;
+  top: 131px;
+  transition: transform 0.2s ease-in;
+  width: 360px;
+}
+main.dashboard a.add:hover {
+  transform: scale(1.02);
+}
+/* table */
+main.dashboard table {
+  display: block;
+  border-collapse: separate;
+  border-spacing: 10px;
+  height: 568px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 200px;
+  left: 10px;
+}
+main.dashboard table tr {
+  transition: background 0.2s ease-in;
+}
+main.dashboard table tr:hover {
+  background: #fffd !important;
+}
+main.dashboard table tr:nth-child(even) {
+  background: #fffb;
+}
+main.dashboard table tr:nth-child(odd) {
+  background: #fff8;
+}
+main.dashboard table tr td {
+  border-radius: 20px;
+  height: 100px;
+  position: relative;
+  width: 360px;
+}
+main.dashboard table tr td figure {
+  margin: 0px;
+  position: absolute;
+  top: 14px;
+  left: 10px;
+}
+main.dashboard table tr td div.info {
+  position: absolute;
+  top: 32px;
+  left: 86px;
+}
+main.dashboard table tr td div.info h3,
+main.dashboard table tr td div.info h4 {
+  color: #8a4b4f;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0px;
+}
+main.dashboard table tr td div.info h4 {
+  color: #8a4b4f99;
+  font-size: 13px;
+}
+main.dashboard table tr td div.controls {
+  position: absolute;
+  top: 32px;
+  right: 10px;
+}
+main.dashboard table tr td div.controls a:link,
+main.dashboard table tr td div.controls a:visited {
+  display: inline-block;
+  height: 34px;
+  transition: transform 0.2s ease-in;
+  width: 34px;
+}
+main.dashboard table tr td div.controls a:hover {
+  transform: scale(1.1);
+}
+main.dashboard table tr td div.controls a.show {
+  background: url(../images/btn-show.svg) no-repeat center;
+}
+main.dashboard table tr td div.controls a.edit {
+  background: url(../images/btn-edit.svg) no-repeat center;
+}
+main.dashboard table tr td div.controls a.delete {
+  background: url(../images/btn-delete.svg) no-repeat center;
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* Add */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+main.add header a.back:link,
+main.add header a.back:visited,
+main.show header a.back:link,
+main.show header a.back:visited,
+main.edit header a.back:link,
+main.edit header a.back:visited {
+  background: url(../images/btn-back.svg) no-repeat center;
+  height: 34px;
+  left: 10px;
+  position: absolute;
+  top: 52px;
+  transition: transform 0.2s ease-in;
+  width: 34px;
+}
+main.add header a.back:hover,
+main.show header a.back:hover,
+main.edit header a.back:hover {
+  cursor: pointer;
+  transform: translateX(-4px);
+}
+main.add figure.photo-preview,
+main.show figure.photo-preview,
+main.edit figure.photo-preview {
+  position: relative;
+}
+main.add figure.photo-preview img,
+main.show figure.photo-preview img,
+main.edit figure.photo-preview img {
+  position: absolute;
+  top: 124px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+main.add form,
+main.edit form {
+  position: absolute;
+  left: 20px;
+  top: 320px;
+}
+
+main.add form input,
+main.add form div.select,
+main.add form button,
+main.edit form input,
+main.edit form div.select,
+main.edit form button {
+  border-radius: 40px;
+  border: none;
+  font-family: Montserrat-Regular;
+  font-weight: 400;
+  height: 50px;
+  width: 360px;
+}
+main.add form input,
+main.add form div.select,
+main.edit form input,
+main.edit form div.select {
+  background: #fff;
+  color: #8a4b4f;
+  font-size: 14px;
+  opacity: 0.5;
+  outline: none;
+  margin-bottom: 24px;
+  text-indent: 20px;
+  transition: opacity 0.2s ease-in;
+}
+main.add form select,
+main.edit form select {
+  border: none;
+  background: transparent url(../images/arrows.svg) no-repeat 310px center;
+  height: 50px;
+  font-size: 14px;
+  font-family: Montserrat-Regular;
+  outline: none;
+  width: 340px;
+  /* -webkit-appearance: none; */
+}
+main.add form input:focus,
+main.add form div.select:hover,
+main.edit form input:focus,
+main.edit form div.select:hover {
+  opacity: 0.8;
+}
+main.add form button.upload,
+main.edit form button.upload {
+  background: #fff url(../images/icon-camera.svg) no-repeat 320px center;
+  font-size: 14px;
+  opacity: 0.5;
+  outline: none;
+  margin-bottom: 24px;
+  text-indent: 20px;
+  text-align: left;
+  transition: opacity 0.2s ease-in;
+}
+main.add form button.upload:hover {
+  opacity: 0.8;
+}
+main.add form button.save {
+  background: url(../images/btn-save.svg) no-repeat center;
+  font-size: 16px;
+  transition: transform 0.2s ease-in;
+  text-indent: -9999px;
+}
+main.edit form button.update {
+  background: url(../images/btn-update.svg) no-repeat center;
+  font-size: 16px;
+  transition: transform 0.2s ease-in;
+  text-indent: -9999px;
+}
+main.add form button:hover,
+main.edit form button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* Show */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+main.show div {
+  position: absolute;
+  top: 320px;
+  left: 20px;
+}
+main.show div article {
+  color: #8a4b4f;
+  height: 50px;
+  position: relative;
+  margin-bottom: 20px;
+  width: 360px;
+}
+main.show div article.info-title {
+  background: url(../images/info-title.svg) no-repeat center;
+}
+main.show div article.info-platform {
+  background: url(../images/info-platform.svg) no-repeat center;
+}
+main.show div article.info-category {
+  background: url(../images/info-category.svg) no-repeat center;
+}
+main.show div article.info-year {
+  background: url(../images/info-year.svg) no-repeat center;
+}
+main.show div article p {
+  position: absolute;
+  top: 2px;
+  font-size: 14px;
+  left: 140px;
+}
