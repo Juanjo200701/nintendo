@@ -52,6 +52,8 @@ main.dashboard,
 main.add,
 main.show,
 main.edit { background-image: url("../images/bg.svg"); }
+/* main.register { background-image: url(../images/bg-login.svg); } */
+
 
 /* ---------- Header común ---------- */
 main header {
@@ -139,18 +141,19 @@ button.update {
 button.save { background-image: url("../images/btn-save.svg"); }
 button.update { background-image: url("../images/btn-update.svg"); }
 
-/* ---------- LOGIN ---------- */
-main.login {
+
+/* ---------- LOGIN, REGISTER---------- */
+main.login, main.register {
   justify-content: center;
   align-items: center;
   padding-bottom: 28px;
 }
-main.login form {
+main.login form, main.register form {
   width: 90%;
   max-width: 360px;
-  margin-bottom: 40px;
+  margin-bottom: -500px;
   background: transparent;
-  gap: 12px;
+  gap: 19px;
 }
 main.login .error, .register-link {
   display: inline-block;
