@@ -1,6 +1,5 @@
 /* =========================================================
    master.css - Unificado y adaptado al backend
-   Reemplaza tu css/master.css con este archivo
    ========================================================= */
 
 /* ---------- Fuentes ---------- */
@@ -47,7 +46,7 @@ main.edit {
   flex-direction: column;
 }
 
-/* Rutas a imagenes de fondo (si no las quieres, borra background-image) */
+/* Rutas a imagenes de fondo */
 main.login { background-image: url("../images/bg-login.svg"); }
 main.dashboard,
 main.add,
@@ -67,8 +66,6 @@ main header h2 {
   font-size: 18px;
   margin: 0;
 }
-
-/* Botones header (close / back) */
 main header a.close,
 main header a.back {
   position: absolute;
@@ -82,7 +79,7 @@ main header a.close { right: 16px; background: url("../images/btn-close.svg") no
 main header a.back  { left: 16px;  background: url("../images/btn-back.svg") no-repeat center; }
 main header a.close:hover, main header a.back:hover { transform: scale(1.08); }
 
-/* ---------- Formularios - regla global ---------- */
+/* ---------- Formularios ---------- */
 form {
   display: flex;
   flex-direction: column;
@@ -91,8 +88,6 @@ form {
   width: calc(100% - 40px);
   margin: 0 auto;
 }
-
-/* Inputs y selects */
 form input[type="text"],
 form input[type="password"],
 form input[type="file"],
@@ -109,11 +104,7 @@ form textarea {
   outline: none;
   opacity: 0.95;
 }
-
-/* Ajuste para file input (si usas input file real) */
 input[type="file"] { padding: 10px 18px; height: auto; border-radius: 12px; }
-
-/* Botones */
 form button,
 button {
   height: 50px;
@@ -124,37 +115,27 @@ button {
   font-size: 16px;
   transition: transform .12s ease-in, opacity .12s ease-in;
 }
-
-/* Primario (guardar / ingresar) */
 form button, .btn-primary {
   background: var(--accent);
   color: #fff;
 }
-
-/* Hover ligero */
 form button:hover { transform: scale(1.02); }
-
-/* Botón upload (apariencia especial) */
 button.upload {
   background: #fff url("../images/icon-camera.svg") no-repeat right 18px center;
   color: var(--accent);
   text-align: left;
   padding-left: 18px;
 }
-
-/* Botones save / update (soporte a ambas clases) */
 button.save,
 button.update {
   width: 120px;
   margin-left: auto;
-  text-indent: -9999px; /* ocultar el texto si usas icono central */
+  text-indent: -9999px;
   height: 50px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 28px 28px;
 }
-
-/* Si quieres mostrar texto en lugar de icono, quita text-indent en estos selectores */
 button.save { background-image: url("../images/btn-save.svg"); }
 button.update { background-image: url("../images/btn-update.svg"); }
 
@@ -164,8 +145,6 @@ main.login {
   align-items: center;
   padding-bottom: 28px;
 }
-
-/* Form dentro de login: posicionamos en la parte baja del panel */
 main.login form {
   width: 90%;
   max-width: 360px;
@@ -173,8 +152,6 @@ main.login form {
   background: transparent;
   gap: 12px;
 }
-
-/* En login el enlace 'crear cuenta' (si lo usas) */
 main.login .error, .register-link {
   display: inline-block;
   color: #fff;
@@ -184,8 +161,6 @@ main.login .error, .register-link {
   opacity: 0.9;
 }
 main.login .error:hover, .register-link:hover { color: #792127; text-decoration: underline; }
-
-/* Mensajes de error (alert) - relativos al formulario */
 .alert.alert-danger {
   background: #fff0f0;
   color: var(--accent);
@@ -195,11 +170,10 @@ main.login .error:hover, .register-link:hover { color: #792127; text-decoration:
   box-shadow: 0 2px 8px rgba(138,75,79,0.13);
   font-size: 14px;
   margin-top: 4px;
+  text-align: center;
 }
 
 /* ---------- DASHBOARD ---------- */
-
-/* Botón add centrado */
 main.dashboard a.add {
   display: block;
   height: 50px;
@@ -210,19 +184,15 @@ main.dashboard a.add {
   transition: transform .12s ease-in;
 }
 main.dashboard a.add:hover { transform: scale(1.02); }
-
-/* Tabla convertida a lista (mejor control responsivo) */
 main.dashboard table {
   width: calc(100% - 32px);
   margin: 6px 16px 20px;
   border-collapse: separate;
   border-spacing: 10px;
   overflow-y: auto;
-  max-height: calc(var(--card-h) - 260px); /* deja espacio para header y add */
+  max-height: calc(var(--card-h) - 260px);
   display: block;
 }
-
-/* Cada fila como bloque con padding y sombra */
 main.dashboard table tr {
   display: block;
   margin-bottom: 10px;
@@ -233,8 +203,6 @@ main.dashboard table tr {
   transition: transform .08s ease-in, background .08s ease-in;
 }
 main.dashboard table tr:hover { transform: translateY(-2px); }
-
-/* Contenido de fila: figura + info + controles (flex) */
 main.dashboard table tr td {
   display: flex;
   align-items: center;
@@ -243,8 +211,6 @@ main.dashboard table tr td {
   padding: 0;
   border: none;
 }
-
-/* Figura de portada */
 main.dashboard table tr td figure.cover {
   width: 72px;
   height: 72px;
@@ -259,8 +225,6 @@ main.dashboard table tr td figure.cover img {
   object-fit: cover;
   display: block;
 }
-
-/* Info */
 main.dashboard table tr td .info {
   flex: 1 1 auto;
   color: var(--accent);
@@ -275,8 +239,6 @@ main.dashboard table tr td .info h4 {
   margin: 0;
   color: rgba(138,75,79,0.6);
 }
-
-/* Controles (column) */
 main.dashboard table tr td .controls {
   display: flex;
   gap: 8px;
@@ -296,13 +258,11 @@ main.dashboard table tr td .controls a.edit { background: url("../images/btn-edi
 main.dashboard table tr td .controls a.delete { background: url("../images/btn-delete.svg") no-repeat center; }
 main.dashboard table tr td .controls a:hover { transform: scale(1.08); }
 
-/* ---------- ADD / EDIT (comparten estilo) ---------- */
+/* ---------- ADD / EDIT ---------- */
 main.add,
 main.edit {
-  padding-bottom: 16px; /* espacio inferior para formulario */
+  padding-bottom: 16px;
 }
-
-/* Photo preview centrada */
 figure.photo-preview {
   display: flex;
   justify-content: center;
@@ -314,15 +274,11 @@ figure.photo-preview img {
   object-fit: cover;
   border-radius: 12px;
 }
-
-/* Formulario dentro de add/edit: dejamos margen superior para que no choque con header/imagen */
 main.add form,
 main.edit form {
   margin-top: 8px;
   gap: 14px;
 }
-
-/* select dentro de .select: presentación */
 .select { width: 100%; position: relative; }
 .select select {
   appearance: none;
@@ -335,8 +291,6 @@ main.edit form {
   height: 50px;
   border-radius: 40px;
 }
-
-/* Botones upload */
 main.add button.upload, main.edit button.upload {
   background: #fff url("../images/icon-camera.svg") no-repeat right 18px center;
   height: 50px;
@@ -345,19 +299,59 @@ main.add button.upload, main.edit button.upload {
   padding-left: 18px;
   opacity: 0.95;
 }
-
-/* Botón guardar/actualizar: mostramos iconos (si prefieres texto, quita text-indent) */
 main.add button.save { background-image: url("../images/btn-save.svg"); background-repeat: no-repeat; background-position: center; background-color: transparent; width: 120px; text-indent: -9999px; height: 50px; margin-left: auto; }
 main.edit button.update { background-image: url("../images/btn-update.svg"); background-repeat: no-repeat; background-position: center; background-color: transparent; width: 120px; text-indent: -9999px; height: 50px; margin-left: auto; }
-
-/* Para el caso de tus templates PHP donde ambos usan class="save" en edit/add:
-   aplicamos también la apariencia update si existe .update o .save */
 main.edit button.save { background-image: url("../images/btn-update.svg"); }
 
 /* ---------- SHOW (detalles) ---------- */
-main.show .photo-preview { display:flex; justify-content:center; padding-top:6px; }
-main.show .photo-preview img { width:160px; height:96px; object-fit:cover; border-radius:12px; }
+main.show header {
+    padding: 24px 0 0 0;
+    text-align: center;
+}
+main.show header h2 {
+    font-family: Montserrat-Bold;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+main.show .photo-preview {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0 24px 0;
+}
+main.show .photo-preview img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px #0002;
+}
+main.show .info-blocks {
+    width: 90%;
+    margin: 0 auto;
+}
+main.show .info-row {
+    background: #fff6f6;
+    border-radius: 18px;
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+main.show .info-row .label {
+    font-weight: bold;
+    color: #8A4B4F;
+    width: 110px;
+}
+main.show .info-row .value {
+    color: #8A4B4F;
+    opacity: 0.8;
+}
 
+/* Si prefieres el estilo con iconos a la izquierda y bloques tipo article: */
 main.show > div {
   padding: 12px 20px 24px;
 }
@@ -372,8 +366,6 @@ main.show article {
   min-height: 48px;
 }
 main.show article p { margin:0; color: var(--accent); font-size:14px; }
-
-/* Iconos a la izquierda (usando background images) */
 main.show article.info-title  { background: url("../images/info-title.svg") no-repeat left 12px center; padding-left: 48px; }
 main.show article.info-platform{ background: url("../images/info-platform.svg") no-repeat left 12px center; padding-left: 48px; }
 main.show article.info-category{ background: url("../images/info-category.svg") no-repeat left 12px center; padding-left: 48px; }
@@ -391,4 +383,23 @@ main.show article.info-year    { background: url("../images/info-year.svg") no-r
   main.dashboard table { max-height: calc(100vh - 320px); }
   figure.photo-preview img, .photo-preview img { width: 140px; height: 84px; }
   button.save, button.update { width: 100px; }
+}
+main.edit button.update { 
+  background-image: url("../images/btn-update.svg");
+  background-repeat: no-repeat;
+  background-position: left 18px center;
+  background-size: 28px 28px;
+  background-color: #8A4B4F;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 40px;
+  padding-left: 48px;
+  font-size: 22px;
+  margin-left: 0;
+  text-indent: 0;
+  display: block;
+  text-align: center;
+  border: none;
+  cursor: pointer;
 }

@@ -23,15 +23,20 @@ $stmt->close();
 </head>
 <body>
     <main class="show">
-        <figure class="cover">
-            <img src="uploads/<?php echo htmlspecialchars($juego['cover']); ?>" alt="">
+        <header>
+            <h2>Consultar VideoJuego</h2>
+            <a href="dashboard.php" class="back"></a>
+            <a href="index.php" class="close"></a>
+        </header>
+        <figure class="photo-preview">
+            <img src="../uploads/<?php echo htmlspecialchars($juego['cover']); ?>" alt="Portada" style="width:120px;height:120px;">
         </figure>
-        <div class="info">
-            <h3><?php echo htmlspecialchars($juego['platform']); ?></h3>
-            <h4><?php echo htmlspecialchars($juego['title']); ?></h4>
-            <p><?php echo htmlspecialchars($juego['category']); ?> | <?php echo htmlspecialchars($juego['year']); ?></p>
+        <div class="info-blocks">
+            <div class="info-row"><span class="label">Título:</span> <span class="value"><?php echo htmlspecialchars($juego['title']); ?></span></div>
+            <div class="info-row"><span class="label">Consola:</span> <span class="value"><?php echo htmlspecialchars($juego['platform']); ?></span></div>
+            <div class="info-row"><span class="label">Categoría:</span> <span class="value"><?php echo htmlspecialchars($juego['category']); ?></span></div>
+            <div class="info-row"><span class="label">Año:</span> <span class="value"><?php echo htmlspecialchars($juego['year']); ?></span></div>
         </div>
-        <a href="dashboard.php" class="back"></a>
     </main>
 </body>
 </html>

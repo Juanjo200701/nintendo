@@ -64,22 +64,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a href="index.php" class="close"></a>
         </header>
         <form action="" method="post" enctype="multipart/form-data">
+            <figure class="photo-preview">
+                <?php if (!empty($juego['cover'])): ?>
+                    <img src="../uploads/<?php echo htmlspecialchars($juego['cover']); ?>" alt="Portada" style="width:120px;height:120px;">
+                <?php else: ?>
+                    <img src="images/icon-camera.svg" alt="Portada" style="width:120px;height:120px;">
+                <?php endif; ?>
+            </figure>
             <input type="text" name="title" value="<?php echo htmlspecialchars($juego['title']); ?>" placeholder="Título">
-            <select name="platform">
-                <option value="">Seleccione Consola...</option>
-                <?php while ($p = $plataformas->fetch_assoc()): ?>
-                <option value="<?php echo $p['id']; ?>" <?php if ($juego['platform_id'] == $p['id']) echo 'selected'; ?>><?php echo $p['name']; ?></option>
-                <?php endwhile; ?>
-            </select>
-            <select name="category">
-                <option value="">Seleccione Categoría...</option>
-                <?php while ($c = $categorias->fetch_assoc()): ?>
-                <option value="<?php echo $c['id']; ?>" <?php if ($juego['category_id'] == $c['id']) echo 'selected'; ?>><?php echo $c['name']; ?></option>
-                <?php endwhile; ?>
-            </select>
+            <div class="select">
+                <select name="platform">
+                    <option value="">Seleccione Consola...</option>
+                    <?php while ($p = $plataformas->fetch_assoc()): ?>
+                    <option value="<?php echo $p['id']; ?>" <?php if ($juego['platform_id'] == $p['id']) echo 'selected'; ?>><?php echo $p['name']; ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+            <div class="select">
+                <select name="category">
+                    <option value="">Seleccione Categoría...</option>
+                    <?php while ($c = $categorias->fetch_assoc()): ?>
+                    <option value="<?php echo $c['id']; ?>" <?php if ($juego['category_id'] == $c['id']) echo 'selected'; ?>><?php echo $c['name']; ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
             <input type="file" name="cover" accept="image/*">
             <input type="text" name="year" value="<?php echo htmlspecialchars($juego['year']); ?>" placeholder="Año">
-            <button type="submit" class="save">Guardar Cambios</button>
+            <button type="submit" class="update">Guardar Cambios</button>
             <?php if (!empty($errores)): ?>
             <div class="alert alert-danger">
                 <?php foreach ($errores as $error): ?>

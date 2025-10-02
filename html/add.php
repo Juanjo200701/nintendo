@@ -7,7 +7,6 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 $errores = [];
-// Obtener plataformas y categorías
 $plataformas = $conexion->query("SELECT * FROM platforms");
 $categorias = $conexion->query("SELECT * FROM categories");
 
@@ -18,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $year = $_POST['year'];
     $cover = $_FILES['cover'];
 
-    // Validaciones
     if (empty($title)) $errores[] = "El título es obligatorio.";
     if (empty($platform_id)) $errores[] = "La consola es obligatoria.";
     if (empty($category_id)) $errores[] = "La categoría es obligatoria.";
@@ -26,11 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($cover['error'] !== UPLOAD_ERR_OK) $errores[] = "La portada es obligatoria.";
 
     if (empty($errores)) {
-        // Subir portada
         $nombreArchivo = uniqid() . "_" . basename($cover['name']);
         move_uploaded_file($cover['tmp_name'], "../uploads/" . $nombreArchivo);
 
-        // Insertar en la base de datos
         $stmt = $conexion->prepare("INSERT INTO games (title, platform_id, category_id, cover, year) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("siisi", $title, $platform_id, $category_id, $nombreArchivo, $year);
         if ($stmt->execute()) {
@@ -60,20 +56,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a href="index.php" class="close"></a>
         </header>
         <form action="" method="post" enctype="multipart/form-data">
+            <figure class="photo-preview">
+                <img src="images/icon-camera.svg" alt="Portada" style="width:120px;height:120px;">
+            </figure>
             <input type="text" name="title" placeholder="Título">
-            <select name="platform">
-                <option value="">Seleccione Consola...</option>
-                <?php while ($p = $plataformas->fetch_assoc()): ?>
-                <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
-                <?php endwhile; ?>
-            </select>
-            <select name="category">
-                <option value="">Seleccione Categoría...</option>
-                <?php while ($c = $categorias->fetch_assoc()): ?>
-                <option value="<?php echo $c['id']; ?>"><?php echo $c['name']; ?></option>
-                <?php endwhile; ?>
-            </select>
-            <input type="file" name="cover" accept="image/*">
+            <div class="select">
+                <select name="platform">
+                    <option value="">Seleccione Consola...</option>
+                    <?php while ($p = $plataformas->fetch_assoc()): ?>
+                    <option value="<?php echo $p['id']; ?>"><?php echo $p['name']; ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+            <div class="select">
+                <select name="category">
+                    <option value="">Seleccione Categoría...</option>
+                    <?php while ($c = $categorias->fetch_assoc()): ?>
+                    <option value="<?php echo $c['id']; ?>"><?php echo $c['name']; ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+            <input type="file" name="cover" accept="image/*" placeholder="Subir Portada">
             <input type="text" name="year" placeholder="Año">
             <button type="submit" class="save">Guardar</button>
             <?php if (!empty($errores)): ?>

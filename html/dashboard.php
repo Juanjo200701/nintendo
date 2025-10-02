@@ -39,7 +39,7 @@ $resultado = $conexion->query($sql);
            <tr>
                 <td>
                     <figure class="cover">
-                        <img src="uploads/<?php echo htmlspecialchars($juego['cover']); ?>" alt="">
+                        <img src="../uploads/<?php echo htmlspecialchars($juego['cover']); ?>" alt="Portada">
                     </figure>
                     <div class="info">
                         <h3><?php echo htmlspecialchars($juego['platform']); ?></h3>
